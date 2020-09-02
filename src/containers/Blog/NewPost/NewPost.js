@@ -22,8 +22,12 @@ class NewPost extends Component {
             body: this.state.content,
             author: this.state.author
         }
-        axios.post('/posts', data).then(responce=> {console.log(responce);
-        this.setState({submitted: true})});
+        axios.post('/posts', data)
+            .then(responce=> {
+                console.log(responce);
+                // this.props.history.push('/posts');
+                this.setState({submitted: true});
+            });
     }
     
     render () {
